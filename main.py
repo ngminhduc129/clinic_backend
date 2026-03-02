@@ -21,6 +21,7 @@ DB_CONNECTION_STRING = (
     "UID=nmd129_SQLLogin_3;" # Đã sửa thành số 3 theo ảnh của bạn
     "PWD=Minhduc129;" 
     "TrustServerCertificate=yes;"
+    "Encrypt=yes;"                # Nên có để bảo mật kết nối
 )
 
 def get_db_connection():
@@ -66,4 +67,5 @@ def add_patient(patient: PatientCreate):
         return {"message": "Thêm bệnh nhân thành công!"}
     except Exception as e:
         print(f"❌ LỖI THÊM BỆNH NHÂN: {e}")
+
         return {"error": str(e)}
